@@ -52,10 +52,10 @@ public class CustomizableElement : MonoBehaviour
         return _colorOptions[ColorIndex];
     }
     [ContextMenu("Randomize")]
-    public void Randimize()
+    public void Randomize()
     {
-        SpriteIndex = Random.Range(0, _spriteOptions.Count - 1);
-        ColorIndex = Random.Range(0, _colorOptions.Count - 1);
+        SpriteIndex = Random.Range(0, _spriteOptions.Count);
+        ColorIndex = Random.Range(0, _colorOptions.Count);
         UpdateSprite();
         UpdateColor();  
     }
@@ -66,6 +66,7 @@ public class CustomizableElement : MonoBehaviour
     }
     private void UpdateSprite()
     {
+        if (_spriteOptions.Count == 0) return;
         SpriteIndex = Mathf.Clamp(SpriteIndex, 0, _spriteOptions.Count - 1);
         var positionedSprite = _spriteOptions[SpriteIndex];
         _spriteRenderer.sprite = positionedSprite.Sprite;
@@ -75,6 +76,8 @@ public class CustomizableElement : MonoBehaviour
 
     private void UpdateColor()
     {
+        if (_colorOptions.Count == 0) return;
+        ColorIndex = Mathf.Clamp(ColorIndex, 0, _colorOptions.Count - 1);
         var newColor = _colorOptions[ColorIndex];
         _spriteRenderer.color = newColor;
         if (_copyColorTo.Count > 0)
