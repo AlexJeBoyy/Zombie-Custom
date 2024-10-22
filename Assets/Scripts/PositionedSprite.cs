@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-[SerializeField]
-public class PositionedSprite : CustomizableElement
-{
-    [field:SerializeField]
-    public Sprite Sprite { get;private set; }
+
+[Serializable]
+    public class PositionedSprite
+    {
     [field: SerializeField]
-    public Vector3 PositionModifier { get; set; }
-}
+    public Sprite Sprite { get;private set; }
+    [field : SerializeField]
+    public Vector3 PositionModifier { get; set;}
+    }
+

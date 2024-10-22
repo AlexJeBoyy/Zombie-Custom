@@ -11,7 +11,7 @@ public class CustomizableElement : MonoBehaviour
     private List<PositionedSprite> _spriteOptions;
 
     [field: SerializeField]
-    public int SpriteIndex {  get; private set; }
+    public int SpriteIndex { get; private set; }
 
     [SerializeField]
     private List<Color> _colorOptions;
@@ -19,16 +19,54 @@ public class CustomizableElement : MonoBehaviour
     [field: SerializeField]
     public int ColorIndex;
 
+    [ContextMenu("Next Sprite")]
     public PositionedSprite NextSprite()
     {
-        SpriteIndex = Mathf.Min(SpriteIndex + 1, -_spriteOptions.Count - 1);
-        //UpdateSprite();
+        SpriteIndex = Mathf.Min(SpriteIndex + 1, _spriteOptions.Count - 1);
+        UpdateSprite();
+        return _spriteOptions[SpriteIndex];
+    }
+    [ContextMenu("Previous Sprite")]
+    public PositionedSprite PreviousSprite()
+    {
+        SpriteIndex = Mathf.Max(SpriteIndex - 1, 0);
+        UpdateSprite();
         return _spriteOptions[SpriteIndex];
     }
 
+    [ContextMenu("Next Color")]
+    public Color NextColor()
+    {
+        ColorIndex = Mathf.Min(ColorIndex + 1, _colorOptions.Count - 1);
+        UpdateColor();
+        return _colorOptions[ColorIndex];
+    }
+    [ContextMenu("Previous Color")]
+    public Color PreviousColor()
+    {
+        ColorIndex = Mathf.Max(ColorIndex - 1,0);
+        UpdateColor();
+        return _colorOptions[ColorIndex];
+    }
+    [ContextMenu("Randomize")]
+    public void Randimize()
+    {
+        SpriteIndex = Random.Range(0, _spriteOptions.Count - 1);
+        ColorIndex = Random.Range(0, _colorOptions.Count - 1);
+        UpdateSprite();
+        UpdateColor();  
+    }
     private void UpdateSprite()
     {
-             var positionedSprite = _spriteOptions[SpriteIndex];
+        SpriteIndex = Mathf.Clamp(SpriteIndex, 0, _spriteOptions.Count - 1);
+        var positionedSprite = _spriteOptions[SpriteIndex];
         _spriteRenderer.sprite = positionedSprite.Sprite;
+        transform.localPosition = positionedSprite.PositionModifier;
+
+    }
+
+    private void UpdateColor()
+    {
+        _spriteRenderer.color = _colorOptions[ColorIndex];
     }
 }
