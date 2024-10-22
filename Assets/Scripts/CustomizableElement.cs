@@ -23,18 +23,18 @@ public class CustomizableElement : MonoBehaviour
     private List<SpriteRenderer> _copyColorTo;
 
     [ContextMenu("Next Sprite")]
-    public PositionedSprite NextSprite()
+    public void NextSprite()
     {
         SpriteIndex = Mathf.Min(SpriteIndex + 1, _spriteOptions.Count - 1);
         UpdateSprite();
-        return _spriteOptions[SpriteIndex];
+        //return _spriteOptions[SpriteIndex];
     }
     [ContextMenu("Previous Sprite")]
-    public PositionedSprite PreviousSprite()
+    public void PreviousSprite()
     {
         SpriteIndex = Mathf.Max(SpriteIndex - 1, 0);
         UpdateSprite();
-        return _spriteOptions[SpriteIndex];
+        //return _spriteOptions[SpriteIndex];
     }
 
     [ContextMenu("Next Color")]
