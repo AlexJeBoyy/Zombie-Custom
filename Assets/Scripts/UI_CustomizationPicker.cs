@@ -28,6 +28,8 @@ public class UI_CustomizationPicker : MonoBehaviour
     private void Start()
     {
         UpdateSpriteID();
+        
+
         _previousSpriteButton.onClick.AddListener(() =>
             {
                 _customizableElement.PreviousSprite();
@@ -38,9 +40,29 @@ public class UI_CustomizationPicker : MonoBehaviour
             _customizableElement.NextSprite();
             UpdateSpriteID();
         });
+
+        if (_colorIcon != null)
+        {
+            UpdateColorIcon();
+
+            _previousColorButton.onClick.AddListener(() =>
+            {
+                _customizableElement.PreviousColor();
+                UpdateColorIcon();
+            });
+            _nextColorButton.onClick.AddListener(() =>
+            {
+                _customizableElement.NextColor();
+                UpdateColorIcon();
+            });
+        }
     }
     private void UpdateSpriteID()
     {
         _spriteID.SetText(_customizableElement.SpriteIndex.ToString().PadLeft(2, '0'));
+    }
+    private void UpdateColorIcon()
+    {
+        _colorIcon.color = _customizableElement.CurrentColor;
     }
 }

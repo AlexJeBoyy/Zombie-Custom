@@ -22,6 +22,15 @@ public class CustomizableElement : MonoBehaviour
     [SerializeField]
     private List<SpriteRenderer> _copyColorTo;
 
+    public Color CurrentColor
+    {
+        get
+        {
+            if (_colorOptions.Count == 0) return Color.white;
+            return _colorOptions[ColorIndex];
+        }
+    }
+
     [ContextMenu("Next Sprite")]
     public PositionedSprite NextSprite()
     {
