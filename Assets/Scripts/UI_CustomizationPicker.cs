@@ -27,6 +27,7 @@ public class UI_CustomizationPicker : MonoBehaviour
 
     private void Start()
     {
+        UpdateSpriteID();
         _previousSpriteButton.onClick.AddListener(() =>
             {
                 _customizableElement.PreviousSprite();
