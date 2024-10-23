@@ -1,5 +1,8 @@
-using TMPro;
 using UnityEngine;
+using System;
+using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class UI_CustomizationPicker : MonoBehaviour
@@ -58,12 +61,15 @@ public class UI_CustomizationPicker : MonoBehaviour
             });
         }
     }
-    private void UpdateSpriteID()
+    public void UpdateSpriteID()
     {
+        if (_spriteID == null) return;
         _spriteID.SetText(_customizableElement.SpriteIndex.ToString().PadLeft(2, '0'));
     }
-    private void UpdateColorIcon()
+
+    public void UpdateColorIcon()
     {
+        if (_colorIcon == null) return;
         _colorIcon.color = _customizableElement.CurrentColor;
     }
 }

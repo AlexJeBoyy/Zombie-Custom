@@ -5,6 +5,8 @@ using UnityEngine;
 public class CustomizableElement : MonoBehaviour
 {
     [SerializeField]
+    private CustomizationType _type;
+    [SerializeField]
     private SpriteRenderer _spriteRenderer;
 
     [SerializeField]
@@ -72,6 +74,11 @@ public class CustomizableElement : MonoBehaviour
     public void UpdateSpritePositionModifier()
     {
         _spriteOptions[SpriteIndex].PositionModifier = transform.localPosition;
+    }
+
+    public CustomizationData GetCustomizationData()
+    {
+        return new CustomizationData(_type, _spriteOptions[SpriteIndex], _spriteRenderer.color);
     }
     private void UpdateSprite()
     {
