@@ -27,19 +27,20 @@ public class UI_CustomizationPicker : MonoBehaviour
 
     private void Start()
     {
-        UpdateSpriteID();
-        
-
-        _previousSpriteButton.onClick.AddListener(() =>
+        if (_spriteID != null)
+        {
+            UpdateSpriteID();
+            _previousSpriteButton.onClick.AddListener(() =>
+                {
+                    _customizableElement.PreviousSprite();
+                    UpdateSpriteID();
+                });
+            _nextSpriteButton.onClick.AddListener(() =>
             {
-                _customizableElement.PreviousSprite();
+                _customizableElement.NextSprite();
                 UpdateSpriteID();
             });
-        _nextSpriteButton.onClick.AddListener(() =>
-        {
-            _customizableElement.NextSprite();
-            UpdateSpriteID();
-        });
+        }
 
         if (_colorIcon != null)
         {
