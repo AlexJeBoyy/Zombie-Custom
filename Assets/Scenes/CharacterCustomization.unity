@@ -1233,7 +1233,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 687bc40ce44b1ee449c16824d9ab2f63, type: 3}
   m_Resource: {fileID: 8300000, guid: 687bc40ce44b1ee449c16824d9ab2f63, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1435,7 +1435,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.381132, g: 0.31485662, b: 0.26966888, a: 1}
+  m_BackGroundColor: {r: 0.16940933, g: 0.14917052, b: 0.2754717, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2842,6 +2842,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
+--- !u!114 &1003282036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5333879176007579409, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
+  m_PrefabInstance: {fileID: 1522163243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bfe3f4ec02be540b36cc815c579536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1055304633 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8702042660653868160, guid: 39a843da86bb9e64684e0cc0025fad77, type: 3}
@@ -5302,7 +5313,7 @@ PrefabInstance:
     - target: {fileID: 3079036791224462294, guid: 39a843da86bb9e64684e0cc0025fad77, type: 3}
       propertyPath: _customizableElement
       value: 
-      objectReference: {fileID: 1672273559}
+      objectReference: {fileID: 1003282036}
     - target: {fileID: 5884923012387854615, guid: 39a843da86bb9e64684e0cc0025fad77, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

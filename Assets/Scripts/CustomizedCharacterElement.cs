@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-public class CustomizedCharacterElements : MonoBehaviour
+public class CustomizedCharacterElement : MonoBehaviour
     {
     [field: SerializeField]
     public CustomizationType Type { get; private set; }
+
     [SerializeField]
     private CustomizedCharacter _character;
 
@@ -19,7 +20,7 @@ public class CustomizedCharacterElements : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         var customization = _character.Data.FirstOrDefault(d => d.Type == Type);
-        if (customization != null) return;
+        if (customization == null) return;
 
         _spriteRenderer.color = customization.Color;
         _spriteRenderer.sprite = customization.Sprite.Sprite;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomizableCharacter : MonoBehaviour
 {
@@ -22,5 +23,17 @@ public class CustomizableCharacter : MonoBehaviour
         {
             _character.Data.Add(element.GetCustomizationData());
         }
+        SceneManager.LoadScene("Done");
+    }
+    public void LoadCustomization()
+    {
+        var elements = GetComponentsInChildren<CustomizableElement>();
+        //_character.Data.Clear();
+        foreach (var element in elements)
+        {
+            _character.Data.Add(element.GetCustomizationData());
+        }
+        //SceneManager.LoadScene("CharacterCustomization");
+        SceneManager.LoadScene("Menu");
     }
 }
