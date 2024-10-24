@@ -33,7 +33,7 @@ public class CustomizableCharacter : MonoBehaviour
         {
             _character.Data.Add(element.GetCustomizationData());
         }
-        //SceneManager.LoadScene("CharacterCustomization");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("CharacterCustomization");
+        //SceneManager.LoadScene("Menu");
     }
 }
