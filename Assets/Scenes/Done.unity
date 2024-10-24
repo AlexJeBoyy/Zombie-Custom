@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 3177675203566003928, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3573036208370857778, guid: eedcc5e2487cc484a985ce455ae3c7aa, type: 3}
+      objectReference: {fileID: 4653992230654718650, guid: d3579803c481d6a4ebf92895985d1054, type: 3}
     - target: {fileID: 3177675203566003928, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5333879176007579409, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: <SpriteIndex>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5333879176007579409, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: _colorOptions.Array.data[0].a
@@ -249,11 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123021621752809463, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8851417178880549673, guid: 895d5bbd19268ed4289cac222b2da75f, type: 3}
       propertyPath: m_Name
-      value: CustomizableElement
+      value: Background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
